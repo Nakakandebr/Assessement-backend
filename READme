@@ -1,0 +1,61 @@
+Introduction
+The Phone Numbers Validation Backend is built using Django, a high-level Python web framework. It offers a RESTful API to interact with phone numbers, allowing validation, creation, updating, and deletion.
+
+#Features
+Validate and manage phone numbers from various countries.
+Create new phone number entries with country, country code, and number.
+Retrieve, update, and delete phone number entries.
+Filter phone numbers by country and state.
+Installation
+Follow these steps to set up the project locally:
+
+#Clone the repository:
+
+git clone https://github.com/Nakakandebr/phone-numbers-validation-backend.git
+cd phone-numbers-validation-backend
+Set up a virtual environment 
+
+python -m venv venv
+Activate the virtual environment:
+
+pip install -r requirements.txt
+Run migrations:
+
+python manage.py migrate
+
+#Usage
+To run the development server, use the following command:
+python manage.py runserver
+The server will start at http://localhost:8000/.
+
+#API Endpoints
+GET /api/phonenumbers/
+
+Retrieve a list of all phone numbers.
+
+GET /api/phonenumbers/{id}/
+
+Retrieve details of a specific phone number by ID.
+
+POST /api/phonenumbers/
+
+Create a new phone number entry. Requires country, country code, and number.
+
+PUT /api/phonenumbers/{id}/
+
+Update details of a specific phone number by ID.
+
+DELETE /api/phonenumbers/{id}/
+
+Delete a specific phone number by ID.
+
+GET /api/phonenumbers/filter/{country}/{state}/
+
+Filter phone numbers by country and state.
+
+#Models
+The project uses the PhoneNumber model to represent phone numbers. The model has fields for country, state, country code, and number.
+
+#Testing
+Run tests using the following command:
+python manage.py test
